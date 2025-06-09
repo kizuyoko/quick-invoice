@@ -17,8 +17,8 @@ Designed for simplicity and easy extensibility.
 - **Nuxt 3**
 - **TypeScript**
 - **Tailwind CSS**
-- **Figma** - [Design file] (https://www.figma.com/design/buevG8pmnyx6B4U3FwyRVw/QuickInvoice?node-id=0-1&t=7mFtCDF4piA5mxrS-1)
-- **GitHub**
+- **Figma** - [Design file](https://www.figma.com/design/buevG8pmnyx6B4U3FwyRVw/QuickInvoice?node-id=0-1&t=7mFtCDF4piA5mxrS-1)
+- **GitHub** - [Repository](https://github.com/kizuyoko/quick-invoice)
 - **Pinia**- State management
 - **Jest, Cypress** - Testing
 - **Strapi** - Headless CMS
@@ -30,10 +30,10 @@ Designed for simplicity and easy extensibility.
 ## Project Roadmap
 
 ### Phase 1: MVP (Git: feature/mvp)
-- [ ] Planning
-- [ ] Layout in Figma
-- [ ] Basic Nuxt 3 setup with Tailwind CSS
-- [ ] GitHub Setup
+- [x] Planning
+- [x] Layout in Figma
+- [x] Basic Nuxt 3 setup with Tailwind CSS
+- [x] GitHub Setup
 - [ ] Three pages: Home, Create, About
 - [ ] Simple invoice form with PDF export
 - [ ] Minimal layout and styling
