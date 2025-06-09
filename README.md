@@ -4,6 +4,8 @@
 A simple invoice management app built with Vue 3, Nuxt 3, TypeScript and Tailwind CSS.
 Designed for simplicity and easy extensibility.
 
+![Quick Invoice Screenshot](public/pokecheck-screenshot.png)
+
 ## Features
 - Generate invoices with customizable fields
 - Export invoices as PDF
@@ -24,7 +26,7 @@ Designed for simplicity and easy extensibility.
 - **Strapi** - Headless CMS
 - **Storybook** - UI Component Library
 - **Statsig** - A/B testing
-- **Vercel** - Deployment
+- **Vercel** - [Deployment](https://quick-invoice-eight.vercel.app/)
 - **Lighthouse**
 
 ## Project Roadmap
