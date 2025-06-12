@@ -36,7 +36,7 @@ Designed for simplicity and easy extensibility.
 - [x] Layout in Figma
 - [x] Basic Nuxt 3 setup with Tailwind CSS
 - [x] GitHub Setup
-- [ ] Favicon, font family, CSS base
+- [x] Favicon, font family, CSS base
 - [ ] Three pages: Home, Create, About
 - [ ] Simple invoice form with PDF export
 - [ ] Minimal layout and styling
