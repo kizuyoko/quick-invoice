@@ -37,6 +37,7 @@ Designed for simplicity and easy extensibility.
 - [x] Basic Nuxt 3 setup with Tailwind CSS
 - [x] GitHub Setup
 - [x] Favicon, font family, CSS base
+- [x] Basic components, UI
 - [ ] Three pages: Home, Create, About
 - [ ] Simple invoice form with PDF export
 - [ ] Minimal layout and styling
