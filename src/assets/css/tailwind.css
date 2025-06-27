@@ -33,13 +33,10 @@
   header, footer {
     @apply bg-slate-200 shadow text-2xl;
   }
-  nav {
-    @apply bg-gray-200 shadow sm:shadow-none sm:bg-none;
-  }
   a {
     @apply  hover:underline
   }
-  button, .button {
+  .button {
     @apply bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-xl font-normal hover:no-underline;
   }
 

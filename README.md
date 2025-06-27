@@ -40,8 +40,8 @@ Designed for simplicity and easy extensibility.
 - [x] Basic components, UI
 - [x] Three pages: Home, Create, About
 - [x] Meta
-- [ ] Minimal layout and styling
-- [ ] Responsive design
+- [x] Minimal layout and styling
+- [x] Responsive design
 - [ ] Simple invoice form with PDF export
 - [ ] README with usage instructions
 
