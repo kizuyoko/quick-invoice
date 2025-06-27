@@ -39,7 +39,7 @@ Designed for simplicity and easy extensibility.
 - [x] Favicon, font family, CSS base
 - [x] Basic components, UI
 - [x] Three pages: Home, Create, About
-- [ ] Meta
+- [x] Meta
 - [ ] Minimal layout and styling
 - [ ] Responsive design
 - [ ] Simple invoice form with PDF export

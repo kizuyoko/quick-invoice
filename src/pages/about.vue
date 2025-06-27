@@ -1,7 +1,12 @@
-<script setup>
+<script setup lang="ts">
 useHead({
   title: 'About - QuickInvoice',
-  meta: [{ name: 'description', content: 'Learn more about QuickInvoice and its mission.' }],
+  meta: [
+    { 
+      name: 'description', 
+      content: 'Learn more about QuickInvoice and its mission.' 
+    }
+  ],
 })
 </script>
 
