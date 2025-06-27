@@ -1,5 +1,16 @@
 <script setup lang="ts">
-  import Button from '~/ui/Button.vue'
+  import Button from '~/ui/Button.vue';
+  import { useHead } from '@vueuse/head';
+
+  useHead({
+    title: 'QuickInvoice - Create Professional Invoices',
+    meta: [
+      {
+        name: 'description',
+        content: 'QuickInvoice helps freelancers and small businesses create clean, professional invoices in seconds.',
+      },
+    ],
+  });
 </script>
 
 <template>
