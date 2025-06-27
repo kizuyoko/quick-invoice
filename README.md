@@ -38,11 +38,13 @@ Designed for simplicity and easy extensibility.
 - [x] GitHub Setup
 - [x] Favicon, font family, CSS base
 - [x] Basic components, UI
-- [ ] Three pages: Home, Create, About
-- [ ] Simple invoice form with PDF export
+- [x] Three pages: Home, Create, About
+- [ ] Meta
 - [ ] Minimal layout and styling
 - [ ] Responsive design
+- [ ] Simple invoice form with PDF export
 - [ ] README with usage instructions
+
 
 ### Phase 2: Enhancements (Git: feature/enhancements)
 - [ ] Strapi integration
