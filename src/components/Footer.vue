@@ -4,7 +4,7 @@ import NavItem from '~/ui/NavItem.vue';
 <template>
   <footer>
     <section class="innerContainer">
-      <nav class="flex items-center justify-center w-full gap-4">
+      <nav class="flex items-center justify-center w-full gap-8">
         <NavItem 
           href="https://github.com/kizuyoko/quick-invoice" 
           variant="footer"

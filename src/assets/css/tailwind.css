@@ -33,9 +33,6 @@
   header, footer {
     @apply bg-slate-200 shadow text-2xl;
   }
-  nav {
-    @apply bg-gray-200 shadow sm:shadow-none sm:bg-none;
-  }
   a {
     @apply  hover:underline
   }
