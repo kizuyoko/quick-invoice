@@ -41,7 +41,7 @@ Designed for simplicity and easy extensibility.
 - [x] Three pages: Home, Create, About
 - [x] Meta
 - [x] Minimal layout and styling
-- [ ] Responsive design
+- [x] Responsive design
 - [ ] Simple invoice form with PDF export
 - [ ] README with usage instructions
 
