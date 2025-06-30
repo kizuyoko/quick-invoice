@@ -3,7 +3,7 @@ import NavItem from '~/ui/NavItem.vue';
 </script>
 
 <template>
-  <NavItem href="/">
+  <NavItem href="/" class="no-underline">
     <h1>QuickInvoice</h1>
   </NavItem>
 </template>
