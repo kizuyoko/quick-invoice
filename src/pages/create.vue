@@ -15,7 +15,7 @@ useHead({
 
 <template>
   <main class="flex-col flex-1 innerContainer">
-    <section class="mt-8">
+    <section class="w-full mt-4">
       <h2>Create Invoice</h2>
       <InvoiceForm />
     </section>
