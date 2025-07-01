@@ -12,9 +12,7 @@ useHead({
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <main class="flex flex-col items-center justify-center flex-1 innerContainer">
-      <NuxtPage />
-    </main>
+    <NuxtPage />
     <Footer />
   </div>
 </template>
