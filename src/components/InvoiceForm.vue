@@ -53,16 +53,40 @@ import Button from '~/ui/Button.vue';
         </thead>
         <tbody>
           <tr>
-            <td class="text-left">Item 1</td>
-            <td>1</td>
-            <td>$10.00</td>
-            <td>$10.00</td>
+            <td class="sm:text-left">
+              <span class="font-semibold text-gray-600 sm:hidden">Item: </span>
+              Item 1
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Qty: </span>
+              1
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span>
+              $10.00
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Total Price: </span>
+              $10.00
+            </td>
           </tr>
           <tr>
-            <td class="text-left">Item 2</td>
-            <td>2</td>
-            <td>$20.00</td>
-            <td>$40.00</td>
+            <td class="sm:text-left">
+              <span class="font-semibold text-gray-600 sm:hidden">Item: </span>
+              Item 2
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Qty: </span>
+              2
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span>
+              $20.00
+            </td>
+            <td>
+              <span class="font-semibold text-gray-600 sm:hidden">Total Price: </span>
+              $40.00
+            </td>
           </tr>
         </tbody>
       </table>

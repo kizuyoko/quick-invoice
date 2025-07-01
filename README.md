@@ -41,12 +41,20 @@ Designed for simplicity and easy extensibility.
 - [x] Three pages: Home, Create, About
 - [x] Meta
 - [x] Minimal layout and styling
+- [x] Invoice form, base
 - [x] Responsive design
-- [ ] Simple invoice form with PDF export
+- [ ] Form Refactor
+- [ ] Define TypeScript types (Invoice, InvoiceItem, Client, etc)
+- [ ] Use local data for clients for MVP purposes.
+- [ ] Input row to table
+- [ ] Delete button
+- [ ] Auto-calculate totals
+- [ ] Print Invoice as PDF
 - [ ] README with usage instructions
 
 
 ### Phase 2: Enhancements (Git: feature/enhancements)
+- [ ] Enable item editing
 - [ ] Strapi integration
 - [ ] Storybook setup for UI components
 - [ ] Currency API integration
