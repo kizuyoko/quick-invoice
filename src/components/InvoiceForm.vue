@@ -85,7 +85,7 @@ import Button from '~/ui/Button.vue';
           <span class="text-gray-600">Tax (10%):</span>
           <span>$5.00</span>
         </div>
-        <div class="flex justify-between pt-2 font-bold text-gray-800 border-t">
+        <div class="flex justify-between pt-2 font-bold text-gray-800 border-t border-slate-500">
           <span>Total:</span>
           <span>$55.00</span>
         </div>
