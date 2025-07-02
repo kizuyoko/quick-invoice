@@ -14,7 +14,7 @@ import InvoiceTotals from '~/components/InvoiceTotals.vue';
     <div class="flex justify-end mt-6">
       <Button 
         type="submit" 
-        class="bg-blue-600"
+        class="bg-blue-700 hover:bg-blue-800"
         aria-label="Print Invoice"
       >
         Print Invoice
