@@ -4,7 +4,7 @@
 A simple invoice management app built with Vue 3, Nuxt 3, TypeScript and Tailwind CSS.
 Designed for simplicity and easy extensibility.
 
-![Quick Invoice Screenshot](public/wireframe-quick-invoice.png)
+![Quick Invoice Screenshot](src/public/wireframe-quick-invoice.png)
 
 ## Features
 - Generate invoices with customizable fields
