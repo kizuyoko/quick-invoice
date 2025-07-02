@@ -1,4 +1,8 @@
 <script setup lang="ts">
+  definePageMeta({
+    redirect: '/create',
+  });
+
   import Button from '~/ui/Button.vue';
   import { useHead } from '@vueuse/head';
 
