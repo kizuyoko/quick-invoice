@@ -43,8 +43,8 @@ Designed for simplicity and easy extensibility.
 - [x] Minimal layout and styling
 - [x] Invoice form, base
 - [x] Responsive design
-- [ ] Form Refactor
-- [ ] Define TypeScript types (Invoice, InvoiceItem, Client, etc)
+- [x] Form Refactor
+- [x] Define TypeScript types (Invoice, InvoiceItem, Client, etc)
 - [ ] Use local data for clients for MVP purposes.
 - [ ] Input row to table
 - [ ] Delete button
