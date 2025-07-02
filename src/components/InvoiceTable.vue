@@ -1,7 +1,8 @@
 <template>
   <section class="overflow-x-auto invoice-table" aria-labelledby="invoice-items-heading" role="region">
-    <table class="min-w-full" aria-describedby="invoice-items-desc">
-      <caption id="invoice-items-heading" class="sr-only">Invoice Items</caption>
+    <h3 id="invoice-items-heading" class="sr-only">Invoice Items</h3>
+    <table class="min-w-full">
+      <caption class="sr-only">Invoice Items</caption>
       <thead>
         <tr>
           <th scope="col">Item</th>
