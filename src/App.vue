@@ -5,7 +5,11 @@ import { useHead } from '@vueuse/head';
 useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-  ]
+  ],
+  htmlAttrs: {
+    lang: 'en',
+  },
+
 })
 </script>
 
