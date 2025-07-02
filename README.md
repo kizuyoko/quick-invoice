@@ -45,7 +45,7 @@ Designed for simplicity and easy extensibility.
 - [x] Responsive design
 - [x] Form Refactor
 - [x] Define TypeScript types (Invoice, InvoiceItem, Client, etc)
-- [ ] Use local data for clients for MVP purposes.
+- [x] Use local data for clients for MVP purposes.
 - [ ] Input row to table
 - [ ] Delete button
 - [ ] Auto-calculate totals

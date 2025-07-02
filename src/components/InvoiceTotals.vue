@@ -15,7 +15,7 @@
           <dt class="text-gray-600">Tax (10%):</dt>
           <dd>$5.00</dd>
         </div>
-        <div class="flex justify-between pt-2 font-bold text-gray-800 border-t border-slate-500">
+        <div class="flex justify-between pt-2 text-xl font-bold text-gray-800 border-t totalAll border-slate-500">
           <dt>Total:</dt>
           <dd>$55.00</dd>
         </div>
