@@ -44,9 +44,9 @@ const removeItem = (id: string) => {
       <thead>
         <tr>
           <th scope="col" class="w-full text-left">Item&nbsp;Name</th>
-          <th scope="col" class="text-center min-w-24">Qty</th>
-          <th scope="col" class="text-center min-w-24">Unit</th>
-          <th scope="col" class="w-1 text-center">Total</th>
+          <th scope="col" class="text-center min-w-20">Qty</th>
+          <th scope="col" class="text-center min-w-32">Unit</th>
+          <th scope="col" class="w-1 text-center min-w-28">Total</th>
           <th scope="col" class="w-1 text-center">Action</th>
         </tr>
       </thead>
@@ -62,11 +62,11 @@ const removeItem = (id: string) => {
           </td>
           <td>
             <span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span> 
-            $ {{ item.unitPrice }}
+            $&nbsp;{{ item.unitPrice }}
           </td>
           <td>
             <span class="font-semibold text-gray-600 sm:hidden">Total Price: </span> 
-            $ {{ totalPrice(item) }}
+            $&nbsp;{{ totalPrice(item) }}
           </td>
           <td>
             <Button
@@ -83,17 +83,18 @@ const removeItem = (id: string) => {
             <input v-model="newItem.name" type="text" class="w-full px-2 py-1 border rounded" placeholder="Item Name" />
           </td>
           <td>
-            <span class="font-semibold text-gray-600 sm:hidden">Quantity: </span>
-            <input v-model="newItem.quantity" type="number" class="w-full px-2 py-1 text-left border rounded" placeholder="Quantity" />
-          </td>
-          <td>
             <div class="flex items-center gap-1">
-              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span> $ <input v-model="newItem.unitPrice" type="number" class="w-full px-2 py-1 text-left border rounded" placeholder="Unit Price" />
+              <span class="font-semibold text-gray-600 sm:hidden">Quantity: </span>
+              <input v-model="newItem.quantity" type="number" class="w-full px-2 py-1 text-right border rounded" placeholder="Quantity" />
             </div>
           </td>
           <td>
-            <span class="font-semibold text-gray-600 sm:hidden">Total Price: </span> $
-            {{ totalPrice(newItem) }}
+            <div class="flex items-center gap-1">
+              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span>$&nbsp;<input v-model="newItem.unitPrice" type="number" class="w-full px-2 py-1 text-right border rounded" placeholder="Unit Price" />
+            </div>
+          </td>
+          <td>
+            <span class="font-semibold text-gray-600 sm:hidden">Total Price: </span>$&nbsp;{{ totalPrice(newItem) }}
           </td>
           <td>
             <Button
