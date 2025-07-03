@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { useInvoiceStore } from '@/stores/useInvoiceStore';
+import { storeToRefs } from 'pinia';
+
+const invoiceStore = useInvoiceStore();
+const { subTotal, tax, total } = storeToRefs(invoiceStore);
+
+</script>
+
 <template>
   <section
     class="flex justify-end mt-6 invoice-totals"
@@ -9,15 +18,15 @@
       <dl>
         <div class="flex justify-between">
           <dt class="text-gray-600">Sub Total:</dt>
-          <dd>$50.00</dd>
+          <dd>${{ subTotal.toFixed(2) }}</dd>
         </div>
         <div class="flex justify-between">
           <dt class="text-gray-600">Tax (10%):</dt>
-          <dd>$5.00</dd>
+          <dd>${{ tax.toFixed(2) }}</dd>
         </div>
         <div class="flex justify-between pt-2 text-xl font-bold text-gray-800 border-t totalAll border-slate-500">
           <dt>Total:</dt>
-          <dd>$55.00</dd>
+          <dd>${{ total.toFixed(2) }}</dd>
         </div>
       </dl>
     </div>
