@@ -20,7 +20,7 @@ import Footer from './components/Footer.vue';
         to="/create"
         class="button"
       >
-        Go back to invoice creation
+        Go Back
       </NuxtLink>
     </main>
     <Footer />
