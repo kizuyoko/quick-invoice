@@ -47,8 +47,8 @@ Designed for simplicity and easy extensibility.
 - [x] Define TypeScript types (Invoice, InvoiceItem, Client, etc)
 - [x] Use local data for clients for MVP purposes.
 - [x] 404
-- [ ] Input row to table
-- [ ] Delete button
+- [x] Input row to table
+- [x] Delete button
 - [ ] Auto-calculate totals
 - [ ] Print Invoice as PDF
 - [ ] README with usage instructions
