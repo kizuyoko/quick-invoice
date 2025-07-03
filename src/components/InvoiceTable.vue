@@ -2,8 +2,11 @@
 import Button from '~/ui/Button.vue'; 
 import { ref, reactive } from 'vue';
 import type { InvoiceItem } from '~/types/InvoiceItem';
+import { useInvoiceStore } from '@/stores/useInvoiceStore';
+import { storeToRefs } from 'pinia';
 
-const items = reactive<InvoiceItem[]>([]);
+const invoiceStore = useInvoiceStore();
+const { items } = storeToRefs(invoiceStore);
 
 const newItem = ref<InvoiceItem>({
   id: '',
@@ -19,7 +22,7 @@ const totalPrice = (item: InvoiceItem) => {
 const addItem = () => {
   if (newItem.value.name && newItem.value.quantity > 0 && newItem.value.unitPrice >= 0) {
     const id = Math.random().toString(36).substring(2, 15); // Generate a random ID
-    items.push({ ...newItem.value, id });
+    invoiceStore.addItem({ ...newItem.value, id });
     newItem.value.name = '';
     newItem.value.quantity = 1;
     newItem.value.unitPrice = 0;
@@ -29,9 +32,9 @@ const addItem = () => {
 };
 
 const removeItem = (id: string) => {
-  const index = items.findIndex(item => item.id === id);
+  const index = invoiceStore.items.findIndex(item => item.id === id);
   if (index !== -1) {
-    items.splice(index, 1);
+    invoiceStore.removeItem(id);
   }
 };
 

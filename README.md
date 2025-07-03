@@ -49,7 +49,8 @@ Designed for simplicity and easy extensibility.
 - [x] 404
 - [x] Input row to table
 - [x] Delete button
-- [ ] Auto-calculate totals
+- [x] Start Pinja for state management.
+- [x] Auto-calculate totals
 - [ ] Print Invoice as PDF
 - [ ] README with usage instructions
 
