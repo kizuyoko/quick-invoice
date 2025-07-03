@@ -5,11 +5,11 @@ import { clients } from '~/data/clients';
 
 const clientList = ref<Client[]>(clients);
 
-const selectedClientId = ref<string | null>(null);
+const selectedClientId = ref<string | null>('');
 const selectedClient = computed(() => {
   return clientList.value.find(client => client.id === selectedClientId.value) || null;
 });
-const selectedBillToId = ref<string | null>(null);
+const selectedBillToId = ref<string | null>('');
 const selectedBillTo = computed(() => {
   return clientList.value.find(client => client.id === selectedBillToId.value) || null;
 });
@@ -21,7 +21,7 @@ const selectedBillTo = computed(() => {
       <div class="form-group">
         <label for="clientName">Client Name</label>
         <select id="clientName" v-model="selectedClientId">
-          <option disabled value="">Select a client</option>
+          <option disabled value="">-- Select a client --</option>
           <option 
             v-for="client in clientList" 
             :key="client.id" 
@@ -42,7 +42,7 @@ const selectedBillTo = computed(() => {
       <div class="form-group">
         <label for="billTo">Bill to</label>
         <select id="billTo" v-model="selectedBillToId">
-          <option disabled value="">Select a client</option>
+          <option disabled value="">-- Select a client --</option>
           <option 
             v-for="client in clientList" 
             :key="client.id" 
