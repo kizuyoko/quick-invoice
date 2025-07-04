@@ -73,7 +73,7 @@ const removeItem = (id: string) => {
           </td>
           <td>
             <Button
-              class="py-1 text-sm bg-red-700 button text-regular hover:bg-red-800"
+              class="py-1 text-sm bg-gray-500 button text-regular hover:bg-gray-400"
               type="button"
               aria-label="Remove item"
               @click="removeItem(item.id)"
@@ -82,18 +82,34 @@ const removeItem = (id: string) => {
         </tr>
         <tr>
           <td class="sm:text-left">
-            <span class="font-semibold text-gray-600 sm:hidden">Item: </span>
-            <input v-model="newItem.name" type="text" class="w-full px-2 py-1 border rounded" placeholder="Item Name" />
-          </td>
-          <td>
             <div class="flex items-center gap-1">
-              <span class="font-semibold text-gray-600 sm:hidden">Quantity: </span>
-              <input v-model="newItem.quantity" type="number" class="w-full px-2 py-1 text-right border rounded" placeholder="Quantity" />
+              <span class="font-semibold text-gray-600 sm:hidden">Item: </span>
+              <input 
+                v-model="newItem.name" 
+                type="text" 
+                class="w-full px-2 py-1 border rounded" placeholder="Item Name" 
+              />
             </div>
           </td>
           <td>
             <div class="flex items-center gap-1">
-              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span>$&nbsp;<input v-model="newItem.unitPrice" type="number" class="w-full px-2 py-1 text-right border rounded" placeholder="Unit Price" />
+              <span class="font-semibold text-gray-600 sm:hidden">Quantity: </span>
+              <input 
+                v-model="newItem.quantity" 
+                type="number" 
+                class="w-full px-2 py-1 text-right border rounded" 
+                placeholder="Quantity" 
+                min="1"                
+              />
+            </div>
+          </td>
+          <td>
+            <div class="flex items-center gap-1">
+              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span>$&nbsp;<input      v-model="newItem.unitPrice" 
+                type="number" 
+                class="w-full px-2 py-1 text-right border rounded" placeholder="Unit Price" 
+                min="1"                
+              />
             </div>
           </td>
           <td>
