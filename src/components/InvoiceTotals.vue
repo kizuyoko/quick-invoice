@@ -24,7 +24,7 @@ const { subTotal, tax, total } = storeToRefs(invoiceStore);
           <dt class="text-gray-600">Tax (10%):</dt>
           <dd>${{ tax.toFixed(2) }}</dd>
         </div>
-        <div class="flex justify-between pt-2 text-xl font-bold text-gray-800 border-t totalAll border-slate-500">
+        <div class="flex justify-between pt-2 text-2xl font-bold text-gray-800 border-t totalAll border-slate-500">
           <dt>Total:</dt>
           <dd>${{ total.toFixed(2) }}</dd>
         </div>
