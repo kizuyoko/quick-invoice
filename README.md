@@ -51,6 +51,8 @@ Designed for simplicity and easy extensibility.
 - [x] Delete button
 - [x] Start Pinja for state management.
 - [x] Auto-calculate totals
+- [x] Print Invoice button to connect with items, client, billto, number, and date
+- [ ] Validator
 - [ ] Print Invoice as PDF
 - [ ] README with usage instructions
 

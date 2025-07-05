@@ -12,7 +12,7 @@ const newItem = ref<InvoiceItem>({
   id: '',
   name: '',
   quantity: 1,
-  unitPrice: 0,
+  unitPrice: 1,
 });
 
 const totalPrice = (item: InvoiceItem) => {
@@ -25,7 +25,7 @@ const addItem = () => {
     invoiceStore.addItem({ ...newItem.value, id });
     newItem.value.name = '';
     newItem.value.quantity = 1;
-    newItem.value.unitPrice = 0;
+    newItem.value.unitPrice = 1;
   } else {
     alert('Please fill in all fields correctly.');
   } 
@@ -98,17 +98,16 @@ const removeItem = (id: string) => {
                 v-model="newItem.quantity" 
                 type="number" 
                 class="w-full px-2 py-1 text-right border rounded" 
-                placeholder="Quantity" 
-                min="1"                
+                placeholder="Quantity"            
               />
             </div>
           </td>
           <td>
             <div class="flex items-center gap-1">
-              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span>$&nbsp;<input      v-model="newItem.unitPrice" 
+              <span class="font-semibold text-gray-600 sm:hidden">Unit&nbsp;Price: </span>$&nbsp;<input      
+                v-model="newItem.unitPrice" 
                 type="number" 
                 class="w-full px-2 py-1 text-right border rounded" placeholder="Unit Price" 
-                min="1"                
               />
             </div>
           </td>

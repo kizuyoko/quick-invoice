@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import type { Client } from '~/types/Client';
 import { clients } from '~/data/clients';
+import { useInvoiceStore } from '@/stores/useInvoiceStore';
+
+const invoiceStore = useInvoiceStore();
 
 const clientList = ref<Client[]>(clients);
 
@@ -12,6 +15,23 @@ const selectedClient = computed(() => {
 const selectedBillToId = ref<string | null>('');
 const selectedBillTo = computed(() => {
   return clientList.value.find(client => client.id === selectedBillToId.value) || null;
+});
+
+watch(selectedClientId, (newId) => {
+  const foundClient = clientList.value.find(client => client.id === newId);
+  if (foundClient) {
+    invoiceStore.client = foundClient;
+  } else {
+    invoiceStore.client.id = '';
+  }
+});
+watch(selectedBillToId, (newId) => {
+  const foundBillTo = clientList.value.find(client => client.id === newId);
+  if (foundBillTo) {
+    invoiceStore.billTo = foundBillTo;
+  } else {
+    invoiceStore.billTo.id = '';
+  }
 });
 
 </script>
@@ -68,6 +88,7 @@ const selectedBillTo = computed(() => {
           placeholder="Enter invoice number"
           class="input"
           autocomplete="off"
+          v-model="invoiceStore.id" 
         />
       </div>
       <div class="form-group">
@@ -76,6 +97,7 @@ const selectedBillTo = computed(() => {
           id="invoiceDate"
           type="date"
           class="input"
+          v-model="invoiceStore.date"
         />
       </div>
     </section>

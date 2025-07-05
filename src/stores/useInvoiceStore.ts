@@ -1,16 +1,21 @@
 import { defineStore } from 'pinia';
 import type { InvoiceItem } from '@/types/InvoiceItem';
+import type { Client } from '@/types/Client';
 
 export const useInvoiceStore = defineStore('invoice', {
   state: () => ({
     items: [] as InvoiceItem[],
     taxRate: 20 / 100, // 20% tax rate
-    client: {
-      name: '',
-      email: '',
-      address: '',
-    },
     id: '' as string,
+    client: {
+      id: '',
+      name: '',
+    } as Client,
+    billTo: {
+      id: '',
+      name: '',
+    } as Client,
+    date: new Date().toISOString().split('T')[0], // Default to today's date
   }),
 
   getters: {
