@@ -4,6 +4,7 @@ import type { InvoiceItem } from './InvoiceItem';
 export interface Invoice {
   id: string;
   client: Client;
+  billTo: Client;
   items: InvoiceItem[];
   total: number;
   subTotal: number;
