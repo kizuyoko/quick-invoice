@@ -3,29 +3,30 @@ import Button from '~/ui/Button.vue';
 import InvoiceFields from '~/components/InvoiceFields.vue';
 import InvoiceTable from '~/components/InvoiceTable.vue';
 import InvoiceTotals from '~/components/InvoiceTotals.vue';
-import { useInvoiceStore } from '@/stores/useInvoiceStore';
-const invoiceStore = useInvoiceStore();
+import InvoicePDF from '~/components/InvoicePDF.vue';
+import Modal from '~/ui/Modal.vue';
+import { ref } from 'vue';
+import type { ComponentPublicInstance } from 'vue';
 
-const submitInvoice = () => {
-  const testData = {
-    client: invoiceStore.client,
-    billTo: invoiceStore.billTo,
-    items: invoiceStore.items,
-  };
+const isModalOpen = ref(false);
 
-  const testText = `
-    Client: ${testData.client.name}
-    Bill To: ${testData.billTo.name}
-    Items: ${testData.items.map(item => `${item.name} - Qty: ${item.quantity}, Price: $${item.unitPrice}`).join('\n')}
-  `;
-  alert(testText);
+const pdfRef = ref<ComponentPublicInstance<{ printInvoice: () => void }> | null>(null);
+
+const previewInvoice = () => {
+  isModalOpen.value = true;
+  //pdfRef.value?.printInvoice();
 };
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
 </script>
 
 <template>
   <form 
-    @submit.prevent="submitInvoice"
-    class="p-6 mt-4 border border-slate-300 flex flex-col min-h-[600px]">
+    @submit.prevent="previewInvoice"
+    class="flex flex-col p-6 mt-4 bg-white border border-slate-300">
     <InvoiceFields />
     <InvoiceTable />
     <InvoiceTotals />
@@ -36,8 +37,14 @@ const submitInvoice = () => {
         class="bg-blue-700 hover:bg-blue-800"
         aria-label="Print Invoice"
       >
-        Print Invoice
+        Preview Invoice
       </Button>
     </div>
+
+    <Modal v-model="isModalOpen">
+      <client-only>
+        <InvoicePDF ref="pdfRef" />
+      </client-only>
+    </Modal>
   </form>
 </template>

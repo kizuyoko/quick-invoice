@@ -52,8 +52,11 @@ Designed for simplicity and easy extensibility.
 - [x] Start Pinja for state management.
 - [x] Auto-calculate totals
 - [x] Print Invoice button to connect with items, client, billto, number, and date
+- [x] Invoice preview
+- [x] Print Invoice as PDF
+- [x] Modal PDF preview
+- [ ] Invoice PDF style
 - [ ] Validator
-- [ ] Print Invoice as PDF
 - [ ] README with usage instructions
 
 
