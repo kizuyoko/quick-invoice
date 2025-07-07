@@ -54,7 +54,7 @@ Designed for simplicity and easy extensibility.
 - [x] Print Invoice button to connect with items, client, billto, number, and date
 - [x] Invoice preview
 - [x] Print Invoice as PDF
-- [ ] Modal PDF preview
+- [x] Modal PDF preview
 - [ ] Invoice PDF style
 - [ ] Validator
 - [ ] README with usage instructions

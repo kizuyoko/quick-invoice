@@ -4,14 +4,23 @@ import InvoiceFields from '~/components/InvoiceFields.vue';
 import InvoiceTable from '~/components/InvoiceTable.vue';
 import InvoiceTotals from '~/components/InvoiceTotals.vue';
 import InvoicePDF from '~/components/InvoicePDF.vue';
+import Modal from '~/ui/Modal.vue';
 import { ref } from 'vue';
 import type { ComponentPublicInstance } from 'vue';
+
+const isModalOpen = ref(false);
 
 const pdfRef = ref<ComponentPublicInstance<{ printInvoice: () => void }> | null>(null);
 
 const previewInvoice = () => {
-  pdfRef.value?.printInvoice();
+  isModalOpen.value = true;
+  //pdfRef.value?.printInvoice();
 };
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
 </script>
 
 <template>
@@ -32,8 +41,10 @@ const previewInvoice = () => {
       </Button>
     </div>
 
-    <client-only>
-      <InvoicePDF ref="pdfRef" />
-    </client-only>
+    <Modal v-model="isModalOpen">
+      <client-only>
+        <InvoicePDF ref="pdfRef" />
+      </client-only>
+    </Modal>
   </form>
 </template>
