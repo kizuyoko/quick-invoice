@@ -10,8 +10,6 @@ import type { ComponentPublicInstance } from 'vue';
 
 const isModalOpen = ref(false);
 
-const pdfRef = ref<ComponentPublicInstance<{ printInvoice: () => void }> | null>(null);
-
 const previewInvoice = () => {
   isModalOpen.value = true;
   //pdfRef.value?.printInvoice();
@@ -20,6 +18,10 @@ const previewInvoice = () => {
 const closeModal = () => {
   isModalOpen.value = false;
 };
+
+const pdfRef = ref<ComponentPublicInstance<{ printInvoice: () => void }> | null>(null);
+
+
 
 </script>
 
@@ -40,11 +42,13 @@ const closeModal = () => {
         Preview Invoice
       </Button>
     </div>
-
-    <Modal v-model="isModalOpen">
-      <client-only>
-        <InvoicePDF ref="pdfRef" />
-      </client-only>
-    </Modal>
+    <client-only>
+      <Modal 
+        v-model="isModalOpen"
+        @close="closeModal"
+      >
+        <InvoicePDF ref="pdfRef" /> 
+      </Modal>
+    </client-only>
   </form>
 </template>
