@@ -10,8 +10,7 @@
     @apply text-gray-700 bg-slate-50
   }
 
-  h1, h2,
-  button, .button, .totalAll {
+  h1, h2, h3, button, .button, .totalAll {
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1.75rem;
   }
@@ -22,6 +21,10 @@
   h2 {
     font-size: 1.5rem; /* 24px */
     font-weight: 700;
+  }
+  h3 {
+    font-size: 1.2rem; /* 19.2px */
+    font-weight: 500;
   }
   p {
     @apply text-base leading-relaxed p-4;
@@ -74,7 +77,7 @@
     @apply absolute inset-y-0 text-gray-600 pointer-events-none right-5 h-[85px] flex items-center text-sm justify-center;
   }
   .form-group p {
-    @apply py-1 px-1 text-sm text-gray-600;
+    @apply pt-0 pb-1  px-1 text-sm text-gray-600;
   }
 
 
