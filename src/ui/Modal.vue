@@ -24,7 +24,7 @@ const closeModal = () => {
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       @click="closeModal"
     >
-      <div class="relative w-full max-w-3xl p-6 bg-white rounded shadow-lg max-h-[80vh] overflow-y-auto">
+      <div class="relative w-full max-w-3xl p-6 bg-white rounded shadow-lg max-h-[80vh] overflow-y-auto m-4">
         <button 
           type="button"
           @keydown.esc="closeModal"

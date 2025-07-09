@@ -85,10 +85,11 @@ const emit = defineEmits(['close']);
         </thead>
         <tbody>
           <tr v-for="(item, index) in items" :key="item.id">
-            <td class="sm:text-left">{{ item.name }}</td>
-            <td class="text-center">{{ item.quantity }}</td>
-            <td class="text-center">${{ item.unitPrice.toFixed(2) }}</td>
-            <td class="text-center">${{ (item.quantity * item.unitPrice).toFixed(2) }}</td>
+            <td class="sm:text-left">
+            <span class="font-semibold text-gray-600 sm:hidden">Item: </span> {{ item.name }}</td>
+            <td><span class="font-semibold text-gray-600 sm:hidden">Quantity: </span> {{ item.quantity }}</td>
+            <td><span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span>${{ item.unitPrice.toFixed(2) }}</td>
+            <td><span class="font-semibold text-gray-600 sm:hidden">Total: </span>{{ (item.quantity * item.unitPrice).toFixed(2) }}</td>
           </tr>
         </tbody>
       </table>
