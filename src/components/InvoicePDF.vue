@@ -85,7 +85,7 @@ const emit = defineEmits(['close']);
         </thead>
         <tbody>
           <tr v-for="(item, index) in items" :key="item.id">
-            <td class="sm:text-left">
+            <td class="text-xl sm:text-left">
             <span class="font-semibold text-gray-600 sm:hidden">Item: </span> {{ item.name }}</td>
             <td><span class="font-semibold text-gray-600 sm:hidden">Quantity: </span> {{ item.quantity }}</td>
             <td><span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span>${{ item.unitPrice.toFixed(2) }}</td>

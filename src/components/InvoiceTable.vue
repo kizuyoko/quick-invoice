@@ -55,7 +55,7 @@ const removeItem = (id: string) => {
       </thead>
       <tbody>
         <tr v-for="(item, index) in items" :key="item.id">
-          <td class="sm:text-left">
+          <td class="text-xl sm:text-left">
             <span class="font-semibold text-gray-600 sm:hidden">Item: </span>
             {{ item.name }}
           </td>
@@ -87,7 +87,7 @@ const removeItem = (id: string) => {
               <input 
                 v-model="newItem.name" 
                 type="text" 
-                class="w-full px-2 py-1 border rounded" placeholder="Item Name" 
+                class="w-full px-2 py-1 text-right border rounded sm:text-left" placeholder="Item Name" 
               />
             </div>
           </td>
