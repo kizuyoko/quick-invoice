@@ -36,4 +36,31 @@ export const clients: Client[] = [
     email: 'info@creativedesigns.com',
     phone: '555-3456',
   },
+  {
+    id: '6',
+    name: 'Tech Innovators Inc.',
+    address: '987 Cedar St, Springfield, USA',
+    email: 'info@techinnovators.com',
+    phone: '555-6789',
+  },
+  {
+    id: '7',
+    name: 'Green Energy Solutions',
+    address: '159 Birch St, Springfield, USA',
+    email: 'info@greenenergy.com',
+    phone: '555-2468',
+  },
+  { id: '8',
+    name: 'Blue Ocean Enterprises', 
+    address: '753 Spruce St, Springfield, USA',
+    email: 'info@blueocean.com',
+    phone: '555-1357',
+  },
+  {
+    id: '9',
+    name: 'Future Vision Technologies',
+    address: '852 Willow St, Springfield, USA',
+    email: 'info@futurevision.com',
+    phone: '555-8642',
+  }
 ];

@@ -8,13 +8,21 @@ const invoiceStore = useInvoiceStore();
 
 const clientList = ref<Client[]>(clients);
 
+const clientOptions = computed(() => {
+  return clientList.value.filter(client => client.id !== invoiceStore.billTo.id);
+});
+
+const billToOptions = computed(() => {
+  return clientList.value.filter(client => client.id !== invoiceStore.client.id);
+});
+
 const selectedClientId = ref<string | null>('');
 const selectedClient = computed(() => {
-  return clientList.value.find(client => client.id === selectedClientId.value) || null;
+  return clientOptions.value.find(client => client.id === selectedClientId.value) || null;
 });
 const selectedBillToId = ref<string | null>('');
 const selectedBillTo = computed(() => {
-  return clientList.value.find(client => client.id === selectedBillToId.value) || null;
+  return billToOptions.value.find(client => client.id === selectedBillToId.value) || null;
 });
 
 watch(selectedClientId, (newId) => {
@@ -43,7 +51,7 @@ watch(selectedBillToId, (newId) => {
         <select id="clientName" v-model="selectedClientId">
           <option disabled value="">-- Select a client --</option>
           <option 
-            v-for="client in clientList" 
+            v-for="client in clientOptions" 
             :key="client.id" 
             :value="client.id"
           >
@@ -64,7 +72,7 @@ watch(selectedBillToId, (newId) => {
         <select id="billTo" v-model="selectedBillToId">
           <option disabled value="">-- Select a client --</option>
           <option 
-            v-for="client in clientList" 
+            v-for="client in billToOptions" 
             :key="client.id" 
             :value="client.id"
           >
