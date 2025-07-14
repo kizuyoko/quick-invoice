@@ -7,6 +7,9 @@ import InvoicePDF from '~/components/InvoicePDF.vue';
 import Modal from '~/ui/Modal.vue';
 import { ref } from 'vue';
 import type { ComponentPublicInstance } from 'vue';
+import { useInvoiceStore } from '@/stores/useInvoiceStore';
+
+const invoiceStore = useInvoiceStore();
 
 const isModalOpen = ref(false);
 
@@ -38,6 +41,7 @@ const pdfRef = ref<ComponentPublicInstance<{ printInvoice: () => void }> | null>
         type="submit" 
         class="bg-blue-700 hover:bg-blue-800"
         aria-label="Print Invoice"
+        :disabled="!invoiceStore.isFormValid"
       >
         Preview Invoice
       </Button>

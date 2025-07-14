@@ -28,6 +28,14 @@ export const useInvoiceStore = defineStore('invoice', {
     total(): number {
       return this.subTotal + this.tax;
     },
+    isFormValid(state): boolean {
+      return (
+        state.client.id !== '' &&
+        state.billTo.id !== '' &&
+        state.items.length > 0 &&
+        state.items.every(item => item.name !== '' && item.quantity > 0 && item.unitPrice > 0)
+      );
+    }
   },
 
   actions: {
