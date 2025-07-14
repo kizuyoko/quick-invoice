@@ -19,16 +19,18 @@ const totalPrice = (item: InvoiceItem) => {
   return item.unitPrice * item.quantity;
 };
 
+const isAddDisabled = computed (() => {
+  return !newItem.value.name || newItem.value.quantity <= 0 || newItem.value.unitPrice < 0;
+});
+
 const addItem = () => {
-  if (newItem.value.name && newItem.value.quantity > 0 && newItem.value.unitPrice >= 0) {
+  if (!isAddDisabled.value) {
     const id = Math.random().toString(36).substring(2, 15); // Generate a random ID
     invoiceStore.addItem({ ...newItem.value, id });
     newItem.value.name = '';
     newItem.value.quantity = 1;
     newItem.value.unitPrice = 1;
-  } else {
-    alert('Please fill in all fields correctly.');
-  } 
+  }
 };
 
 const removeItem = (id: string) => {
@@ -88,6 +90,8 @@ const removeItem = (id: string) => {
                 v-model="newItem.name" 
                 type="text" 
                 class="w-full px-2 py-1 text-right border rounded sm:text-left" placeholder="Item Name" 
+                required
+                aria-label="Item Name"
               />
             </div>
           </td>
@@ -98,7 +102,9 @@ const removeItem = (id: string) => {
                 v-model="newItem.quantity" 
                 type="number" 
                 class="w-full px-2 py-1 text-right border rounded" 
-                placeholder="Quantity"            
+                placeholder="Quantity" 
+                required
+                aria-label="Quantity"
               />
             </div>
           </td>
@@ -108,6 +114,8 @@ const removeItem = (id: string) => {
                 v-model="newItem.unitPrice" 
                 type="number" 
                 class="w-full px-2 py-1 text-right border rounded" placeholder="Unit Price" 
+                required
+                aria-label="Unit Price"
               />
             </div>
           </td>
@@ -120,6 +128,7 @@ const removeItem = (id: string) => {
               type="button"
               aria-label="Add a new invoice item"
               @click="addItem"
+              :disabled="isAddDisabled"
             >Add</Button>
           </td>
         </tr>
