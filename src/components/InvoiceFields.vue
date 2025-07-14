@@ -3,6 +3,7 @@ import { ref, watch } from 'vue';
 import type { Client } from '~/types/Client';
 import { clients } from '~/data/clients';
 import { useInvoiceStore } from '@/stores/useInvoiceStore';
+import { isValidInvoiceId } from '@/utils/validators';
 
 const invoiceStore = useInvoiceStore();
 
@@ -42,13 +43,22 @@ watch(selectedBillToId, (newId) => {
   }
 });
 
+const invoiceIdError = ref<string | null>(null);
+watch(() => invoiceStore.id, (newId) => {
+  if (!isValidInvoiceId(newId)) {
+    invoiceIdError.value = 'Invalid invoice ID format.';
+  } else {
+    invoiceIdError.value = null;
+  }
+});
+
 </script>
 
 <template>
   <section class="grid grid-cols-1 gap-4 mb-6 sm:grid-cols-2">
       <div class="form-group">
         <label for="clientName">Client Name</label>
-        <select id="clientName" v-model="selectedClientId">
+        <select id="clientName" v-model="selectedClientId" required>
           <option disabled value="">-- Select a client --</option>
           <option 
             v-for="client in clientOptions" 
@@ -69,7 +79,7 @@ watch(selectedBillToId, (newId) => {
       </div>
       <div class="form-group">
         <label for="billTo">Bill to</label>
-        <select id="billTo" v-model="selectedBillToId">
+        <select id="billTo" v-model="selectedBillToId" required>
           <option disabled value="">-- Select a client --</option>
           <option 
             v-for="client in billToOptions" 
@@ -96,8 +106,15 @@ watch(selectedBillToId, (newId) => {
           placeholder="Enter invoice number"
           class="input"
           autocomplete="off"
-          v-model="invoiceStore.id" 
+          v-model="invoiceStore.id"
+          required
+          :class="{ 'border-red-500': invoiceIdError }"
+          @input="invoiceStore.id = invoiceStore.id.replace(/[^a-zA-Z0-9-]/g, '')"
+          title="Only alphanumeric characters and hyphens are allowed"
         />
+        <p v-if="invoiceIdError" class="mt-1 text-sm text-red-500">
+    {{ invoiceIdError }}
+  </p>
       </div>
       <div class="form-group">
         <label for="invoiceDate">Invoice Date</label>
@@ -106,6 +123,8 @@ watch(selectedBillToId, (newId) => {
           type="date"
           class="input"
           v-model="invoiceStore.date"
+          required
+          :max="new Date().toISOString().split('T')[0]"
         />
       </div>
     </section>
