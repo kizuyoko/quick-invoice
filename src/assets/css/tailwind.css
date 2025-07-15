@@ -82,7 +82,12 @@
   .form-group p {
     @apply pt-0 pb-1  px-1 text-sm text-gray-600;
   }
-
+  .form-group .error-border, td .error-border {
+    @apply border-red-500 border-2;
+  }
+  .form-group .error-text, td .error-text {
+    @apply text-red-500 p-0 text-sm;
+  }
 
 
 
