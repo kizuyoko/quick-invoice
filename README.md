@@ -57,7 +57,7 @@ Designed for simplicity and easy extensibility.
 - [x] Print Invoice as PDF
 - [x] Modal PDF preview
 - [x] Invoice PDF style
-- [ ] Validator
+- [x] Validator
 
 ### Phase 2: Enhancements (Git: feature/enhancements)
 - [ ] Enable item editing
