@@ -59,6 +59,10 @@ const addItem = () => {
     newItem.value.name = '';
     newItem.value.quantity = 1;
     newItem.value.unitPrice = 1;
+
+    itemNameTouched.value = false;
+    quantityTouched.value = false;
+    unitPriceTouched.value = false;
   }
 };
 
