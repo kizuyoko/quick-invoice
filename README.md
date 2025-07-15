@@ -7,6 +7,7 @@ Designed for simplicity and easy extensibility.
 ![Quick Invoice Screenshot](src/public/wireframe-quick-invoice.png)
 
 ## Features
+- Form and validator
 - Generate invoices with customizable fields
 - Export invoices as PDF
 - Responsive design for desktop and mobile
@@ -55,10 +56,8 @@ Designed for simplicity and easy extensibility.
 - [x] Invoice preview
 - [x] Print Invoice as PDF
 - [x] Modal PDF preview
-- [ ] Invoice PDF style
+- [x] Invoice PDF style
 - [ ] Validator
-- [ ] README with usage instructions
-
 
 ### Phase 2: Enhancements (Git: feature/enhancements)
 - [ ] Enable item editing

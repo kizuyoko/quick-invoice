@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import type { InvoiceItem } from '@/types/InvoiceItem';
 import type { Client } from '@/types/Client';
-import { invoiceIdPattern }  from '@/utils/validators';
+import { invoiceIdPattern, datePattern }  from '@/utils/validators';
 
 export const useInvoiceStore = defineStore('invoice', {
   state: () => ({
@@ -36,6 +36,7 @@ export const useInvoiceStore = defineStore('invoice', {
         state.id !== '' &&
         invoiceIdPattern.test(state.id) &&
         state.date !== '' &&
+        datePattern.test(state.date) &&
         state.items.length > 0 &&
         state.items.every(item => item.name !== '' && item.quantity > 0 && item.unitPrice > 0)
       );
