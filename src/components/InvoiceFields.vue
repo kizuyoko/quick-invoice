@@ -112,6 +112,7 @@ watch(() => invoiceStore.date, (newDate) => {
           required
           :class="{ 'error-border': selectedClientError }"
           @blur="validateClientSelection"
+          aria-describedby="clientName-error"
         >
           <option disabled value="">-- Select a client --</option>
           <option 
@@ -123,7 +124,12 @@ watch(() => invoiceStore.date, (newDate) => {
           </option>
         </select>
         <div class="arrow" aria-hidden="true">▼</div>
-        <p v-if="selectedClientError" class="error-text">
+        <p 
+          v-if="selectedClientError" 
+          class="error-text" 
+          id="clientName-error" 
+          aria-live="polite"
+        >
           {{ selectedClientError }}
         </p>
         <transition name="fade-slide" mode="out-in">
@@ -145,6 +151,7 @@ watch(() => invoiceStore.date, (newDate) => {
           required
           :class="{ 'error-border': selectedBillToError }"
           @blur="validateBillToSelection"
+          aria-describedby="billTo-error"
         >
           <option disabled value="">-- Select a client --</option>
           <option 
@@ -156,7 +163,12 @@ watch(() => invoiceStore.date, (newDate) => {
           </option>
         </select>
         <div class="arrow" aria-hidden="true">▼</div>
-        <p v-if="selectedBillToError" class="error-text">
+        <p 
+          v-if="selectedBillToError" 
+          class="error-text"
+          id="billTo-error" 
+          aria-live="polite"
+        >
           {{ selectedBillToError }}
         </p>
         <transition name="fade-slide" mode="out-in">
@@ -184,8 +196,14 @@ watch(() => invoiceStore.date, (newDate) => {
           @input="invoiceStore.id = invoiceStore.id.replace(/[^a-zA-Z0-9-]/g, '')"
           title="Only alphanumeric characters and hyphens are allowed"
           @blur="validateInvoiceId"
+          aria-describedby="invoiceID-error"
         />
-        <p v-if="invoiceIdError" class="error-text">
+        <p 
+          v-if="invoiceIdError" 
+          class="error-text"
+          id="invoiceID-error" 
+          aria-live="polite"
+        >
           {{ invoiceIdError }}
         </p>
       </div>
@@ -204,8 +222,14 @@ watch(() => invoiceStore.date, (newDate) => {
           @input="invoiceStore.date = invoiceStore.date.replace(/[^0-9-]/g, '')"
           title="Date must be in MM-DD-YYYY format and not in the future."
           :max="new Date().toISOString().split('T')[0]"
+          aria-describedby="invoiceDate-error"
         />
-        <p v-if="invoiceDateError" class="error-text">
+        <p 
+          v-if="invoiceDateError" 
+          class="error-text"
+          id="invoiceDate-error" 
+          aria-live="polite"
+        >
           {{ invoiceDateError }}
         </p>
       </div>
