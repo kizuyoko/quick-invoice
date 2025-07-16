@@ -112,7 +112,7 @@ watch(() => invoiceStore.date, (newDate) => {
           required
           :class="{ 'error-border': selectedClientError }"
           @blur="validateClientSelection"
-          aria-describedby="clientName-error"
+          :aria-describedby="selectedClientError ? 'clientName-error' : undefined"
         >
           <option disabled value="">-- Select a client --</option>
           <option 
@@ -151,7 +151,7 @@ watch(() => invoiceStore.date, (newDate) => {
           required
           :class="{ 'error-border': selectedBillToError }"
           @blur="validateBillToSelection"
-          aria-describedby="billTo-error"
+          :aria-describedby="selectedBillToError ? 'billTo-error' : undefined"
         >
           <option disabled value="">-- Select a client --</option>
           <option 
@@ -196,7 +196,7 @@ watch(() => invoiceStore.date, (newDate) => {
           @input="invoiceStore.id = invoiceStore.id.replace(/[^a-zA-Z0-9-]/g, '')"
           title="Only alphanumeric characters and hyphens are allowed"
           @blur="validateInvoiceId"
-          aria-describedby="invoiceID-error"
+          :aria-describedby="invoiceIdError ? 'invoiceID-error' : undefined"
         />
         <p 
           v-if="invoiceIdError" 
@@ -222,7 +222,7 @@ watch(() => invoiceStore.date, (newDate) => {
           @input="invoiceStore.date = invoiceStore.date.replace(/[^0-9-]/g, '')"
           title="Date must be in MM-DD-YYYY format and not in the future."
           :max="new Date().toISOString().split('T')[0]"
-          aria-describedby="invoiceDate-error"
+          :aria-describedby="invoiceDateError ? 'invoiceDate-error' : undefined"
         />
         <p 
           v-if="invoiceDateError" 
