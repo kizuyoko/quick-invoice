@@ -7,32 +7,38 @@ Designed for simplicity and easy extensibility.
 ![Quick Invoice Screenshot](src/public/wireframe-quick-invoice.png)
 
 ## Features
-- Form and validator
+- Dynamic form with validation
 - Generate invoices with customizable fields
 - Export invoices as PDF
-- Responsive design for desktop and mobile
-- Simple UI, built with reusable components
-- Planned support for authentication and invoice history
-- Future enhancements like A/B testing, multi-language, and CSV export
+- Responsive design for both desktop and mobile
+- Simple and clean UI, built with reusable components
+- Planned features: authentication and invoice history
+- Future enhancements: A/B testing, multi-language support, CSV export
 
 ## Tech Stack
 - **Vue.js 3**
 - **Nuxt 3**
 - **TypeScript**
 - **Tailwind CSS**
-- **Figma** - [Design file](https://www.figma.com/design/buevG8pmnyx6B4U3FwyRVw/QuickInvoice?node-id=0-1&t=7mFtCDF4piA5mxrS-1)
-- **GitHub** - [Repository](https://github.com/kizuyoko/quick-invoice)
-- **Pinia**- State management
-- **Jest, Cypress** - Testing
-- **Strapi** - Headless CMS
-- **Storybook** - UI Component Library
-- **Statsig** - A/B testing
-- **Vercel** - [Deployment](https://quick-invoice-eight.vercel.app/)
-- **Lighthouse**
+- **Figma**: [Design file](https://www.figma.com/design/buevG8pmnyx6B4U3FwyRVw/QuickInvoice?node-id=0-1&t=7mFtCDF4piA5mxrS-1)
+- **GitHub**: [Repository](https://github.com/kizuyoko/quick-invoice)
+- **Pinia**: State management
+- **Jest, Cypress**: Testing
+- **Strapi**: Headless CMS
+- **Storybook**: UI Component Library
+- **Statsig**: A/B testing
+- **Vercel**: [Deployment](https://quick-invoice-eight.vercel.app/)
+- **Lighthouse**: Performance auditing, [result](https://pagespeed.web.dev/analysis/https-quick-invoice-eight-vercel-app/0xz8evfe3d?form_factor=desktop)
 
 ## Project Roadmap
 
 ### Phase 1: MVP (Git: feature/mvp)
+This MVP provided valuable learning opportunities, including:
+- Shifting from a React-centric mindset to Vue/Nuxt practices
+- Understanding form handling and validation in Vue
+- Implementing PDF generation on the frontend
+
+#### Checklist 
 - [x] Planning
 - [x] Layout in Figma
 - [x] Basic Nuxt 3 setup with Tailwind CSS
@@ -50,7 +56,7 @@ Designed for simplicity and easy extensibility.
 - [x] 404
 - [x] Input row to table
 - [x] Delete button
-- [x] Start Pinja for state management.
+- [x] Start Pinia for state management.
 - [x] Auto-calculate totals
 - [x] Print Invoice button to connect with items, client, billto, number, and date
 - [x] Invoice preview
@@ -60,6 +66,9 @@ Designed for simplicity and easy extensibility.
 - [x] Validator
 
 ### Phase 2: Enhancements (Git: feature/enhancements)
+This phase focuses on refining the user experience, improving accessibility and performance, and laying the groundwork for future scalability.  
+Key goals include polishing UI components, expanding integrations, and adding robust testing and SEO support.
+
 - [ ] Enable item editing
 - [ ] Strapi integration
 - [ ] Storybook setup for UI components
