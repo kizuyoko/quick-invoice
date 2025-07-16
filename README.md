@@ -28,7 +28,9 @@ Designed for simplicity and easy extensibility.
 - **Storybook**: UI Component Library
 - **Statsig**: A/B testing
 - **Vercel**: [Deployment](https://quick-invoice-eight.vercel.app/)
-- **Lighthouse**: Performance auditing, [result](https://pagespeed.web.dev/analysis/https-quick-invoice-eight-vercel-app/0xz8evfe3d?form_factor=desktop)
+- **Lighthouse**: Performance auditing. Scored 100 ponits on desktop. [result](https://pagespeed.web.dev/analysis/https-quick-invoice-eight-vercel-app/0xz8evfe3d?form_factor=desktop)
+- **WAVE (WebAIM)**: Accessibility checker.
+No errors or contrast issues found. [result](https://wave.webaim.org/report#/https://quick-invoice-eight.vercel.app)
 
 ## Project Roadmap
 
