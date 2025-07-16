@@ -3,6 +3,8 @@ import { defineEmits } from 'vue';
 import { useInvoiceStore } from '@/stores/useInvoiceStore';
 import { storeToRefs } from 'pinia';
 import Button from '~/ui/Button.vue';
+import InvoiceTableHead from './InvoiceTableHead.vue';
+import InvoiceTableRow from './InvoiceTableRow.vue';
 
 const invoiceStore = useInvoiceStore();
 const { client, billTo, items } = storeToRefs(invoiceStore);
@@ -74,23 +76,12 @@ const emit = defineEmits(['close']);
     <section class="overflow-x-auto invoice-table" aria-labelledby="invoice-items-heading" role="region">
       <h3 id="invoice-items-heading" class="sr-only">Invoice Items</h3>
       <table class="min-w-full">
-        <caption class="sr-only">Invoice Items</caption>
-        <thead>
-          <tr>
-            <th scope="col" class="w-full text-left">Item&nbsp;Name</th>
-            <th scope="col" class="text-center min-w-20">Qty</th>
-            <th scope="col" class="text-center min-w-32">Unit</th>
-            <th scope="col" class="w-1 text-center min-w-28">Total</th>
-          </tr>
-        </thead>
+        <InvoiceTableHead :showAction="false" />
         <tbody>
-          <tr v-for="(item, index) in items" :key="item.id">
-            <td class="text-xl sm:text-left">
-            <span class="font-semibold text-gray-600 sm:hidden">Item: </span> {{ item.name }}</td>
-            <td><span class="font-semibold text-gray-600 sm:hidden">Quantity: </span> {{ item.quantity }}</td>
-            <td><span class="font-semibold text-gray-600 sm:hidden">Unit Price: </span>${{ item.unitPrice.toFixed(2) }}</td>
-            <td><span class="font-semibold text-gray-600 sm:hidden">Total: </span>{{ (item.quantity * item.unitPrice).toFixed(2) }}</td>
-          </tr>
+          <InvoiceTableRow 
+            :invoiceItems="items"
+            :isPDF="true"
+          />
         </tbody>
       </table>
     </section>
